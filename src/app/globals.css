@@ -2,32 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color: rgb(163, 0, 163);
+}
+.nav{
+  @apply bg-purple-500 py-[1rem] w-[90vw] m-auto my-[1rem] flex justify-around items-center rounded font-bold;
+} 
+
+.home{
+  @apply w-[90vw] m-auto ;
+}
+.all_posts{
+  @apply w-[90vw] m-auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.posts{  
+ display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
+}
+.post{
+  opacity: 0;
+  animation: moveUp .5s ease 1 forwards;
+}
+
+@keyframes moveUp {
+  from{
+    transform: translateY(4rem)
+  }
+  to{
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.all_posts h1{
+  @apply text-3xl font-bold text-center my-[2rem];
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.post h2{
+
+  @apply text-2xl font-bold  my-[0.5rem] ;
+}
+.post h3{
+  @apply ml-[2rem] my-[.5rem];
+}
+
+.post button{
+  @apply ml-[2rem] bg-red-500 my-[.5rem] p-[.5rem] rounded font-bold;
+}
+
+.post{
+  box-shadow: .1rem .1rem .5rem rgb(75, 0, 75) ;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+
+.premium{
+  @apply text-3xl font-bold text-center mt-[2rem];
+}
+
+.premium h2{
+  margin: 1rem 0rem;
+}
+
+.premium h3{
+  margin: 1rem 0rem;
+}
+
+
+.profile{
+  @apply w-[90vw] m-auto text-[1.5rem] text-center mt-[2rem];
+}
+
+.profile h1,h2{
+  @apply text-3xl font-bold mb-[1rem];
+}
+
+.profile button{
+  @apply  p-[.5rem] rounded font-bold;
+}
+
+.login{
+  @apply w-[90vw] m-auto text-[1.5rem] text-center mt-[2rem];
+}
+
+.login h1{
+  @apply text-3xl font-bold mb-[2rem];
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input{
+  width: 50vw;
+  margin: auto;
+}
+
+form button{
+  margin: auto;
+  width: fit-content;
+  @apply bg-green-300 py-[.5rem] px-[1rem] rounded;
+
+}
+
+form span{
+  width: fit-content;
+  margin: auto;
+  padding: .5rem 1rem;
+ 
+}
+
+
+.singlePost{
+  @apply w-[90vw] m-auto text-[1.5rem] text-center mt-[2rem];
+}
+
+.singlePost h1{
+  @apply text-3xl font-bold mb-[2rem];
+}
+
+button{
+  color: white;
+  background-color: green!important;
 }
